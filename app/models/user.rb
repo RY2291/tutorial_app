@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  attr_accessor :remeber_token
   # オブジェクトが保存される前にbefore_saveが実行される
   before_save { self.email = email.downcase }
 
@@ -14,5 +15,16 @@ class User < ApplicationRecord
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
+  end
+
+  # 平文を生成
+  def self.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  # 永続セッションのためにユーザーをデータベースに記憶する
+  def remember
+    self.remeber_token = User.new_token
+    update_attribute(:remeber_digest, User.digest(remeber_token))
   end
 end
