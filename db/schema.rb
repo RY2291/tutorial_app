@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_03_01_052151) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
-    t.string "remeber_digest"
+    t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
