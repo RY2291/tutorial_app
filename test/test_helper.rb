@@ -17,7 +17,7 @@ class ActiveSupport::TestCase
     !session[:user_id].nil?
   end
 
-  def login_in_as(user)
+  def log_in_as(user)
     session[:user_id] = user.id
   end
 end
