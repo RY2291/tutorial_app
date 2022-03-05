@@ -249,7 +249,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   bootstrap-sass (= 3.4.1)
   byebug
-  capybara (>= 2.15)
+  capybara (~> 3.23)
   guard (= 2.16.2)
   guard-minitest (= 2.4.6)
   jbuilder (~> 2.7)
