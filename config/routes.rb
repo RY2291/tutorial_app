@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users
-  resources :account_activations, only: [:edit], as: "account_activation_url"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :account_activations, only: [:edit]
+  # For details on the DSL available within this file, see https://guides.rubyonrls.org/routing.html
 end
