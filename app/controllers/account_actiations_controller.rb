@@ -1,3 +1,0 @@
-class AccountActiationsController < ApplicationController
-  
-end
